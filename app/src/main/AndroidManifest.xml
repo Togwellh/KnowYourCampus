@@ -20,6 +20,20 @@
         <activity android:name=".Task3Completed" />
         <activity android:name=".Task3Camera" />
         <activity android:name=".Task3Main" />
+        <activity android:name=".QuizPageTwoActivity" />
+        <activity android:name=".QuizPageThreeActivity" />
+        <activity android:name=".QuizPageFourActivity" />
+        <activity android:name=".QuizFinalscoreActivity" />
+        <activity android:name=".QuizPageOneActivity" />
+        <activity android:name=".StartQuizActivity" />
+        <activity android:name=".LeaderboardActivity" />
+        <activity android:name=".TeamLobbyActivity"></activity>
+        <activity android:name=".TeamNameInputActivity" />
+        <activity android:name=".TeamJoinActivity" />
+        <activity android:name=".TeamRoleSelectionActivity" />
+        <activity android:name=".PlayerSelectionActivity" />
+        <activity android:name=".TourSelectionActivity" />
+        <activity android:name=".SoloNameInputActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

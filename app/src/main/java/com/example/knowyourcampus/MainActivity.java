@@ -27,4 +27,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void startTour(View view) {
+        Intent intent = new Intent(this, SoloNameInputActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewLeaderboard(View view) {
+        //FIXME: should point to 'Leaderboard' screen, not 'Home' screen
+        Intent intent = new Intent(this, LeaderboardActivity.class);
+        startActivity(intent);
+    }
 }
