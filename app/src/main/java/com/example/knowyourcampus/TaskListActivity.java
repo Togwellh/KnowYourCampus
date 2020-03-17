@@ -45,6 +45,9 @@ public class TaskListActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        checkForTaskCompletion();
+
         boolean quizEnabled = true;
         for (Task t : tasks) {
             if (!t.isCompleted()) {
@@ -55,9 +58,14 @@ public class TaskListActivity extends AppCompatActivity {
         findViewById(R.id.bt_take_quiz).setEnabled(quizEnabled);
     }
 
+    private void checkForTaskCompletion() {
+        Intent i = getIntent();
+        if (i.hasExtra("EXTRA_QUESTION_TASK_COMPLETED")) tasks.get(0).setCompleted(i.getBooleanExtra("EXTRA_QUESTION_TASK_COMPLETED", false));
+    }
+
     public void onAbandonClicked(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(TaskListActivity.this);
-        builder.setMessage("Do you really want to abandon the curren tour?");
+        builder.setMessage("Do you really want to abandon the current tour?");
         builder.setTitle("Abandon tour?");
         builder.setCancelable(false);
 
@@ -65,6 +73,7 @@ public class TaskListActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(TaskListActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
             }
         });
