@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.knowyourcampus">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,15 +17,15 @@
         <activity android:name=".TaskARResult"></activity>
         <activity android:name=".TaskARCamera" />
         <activity android:name=".TaskARIntroduction" />
-        <activity
-            android:name=".TaskQuestionActivity"
-            android:exported="true" />
-        <activity
-            android:name=".TaskQuestionIntroduction"
-            android:exported="true" />
-        <activity
-            android:name=".TaskListActivity"
-            android:exported="true" />
+        <activity android:name=".TaskQuestionActivity"
+        <activity android:name=".TaskQuestionIntroduction"
+        <activity android:name=".TaskListActivity"
+        <activity android:name=".Task4Completed"></activity>
+        <activity android:name=".Task4Camera" />
+        <activity android:name=".Task4Main" />
+        <activity android:name=".Task3Completed" />
+        <activity android:name=".Task3Camera" />
+        <activity android:name=".Task3Main" />
         <activity android:name=".QuizPageTwoActivity" />
         <activity android:name=".QuizPageThreeActivity" />
         <activity android:name=".QuizPageFourActivity" />
