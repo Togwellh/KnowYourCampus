@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewLeaderboard(View view) {
-        //FIXME: should point to 'Leaderboard' screen, not 'Home' screen
         Intent intent = new Intent(this, LeaderboardActivity.class);
         startActivity(intent);
     }

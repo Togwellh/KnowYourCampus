@@ -3,7 +3,7 @@
     package="com.example.knowyourcampus">
 
     <uses-feature android:name="android.hardware.camera" />
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -14,6 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TaskARResult"></activity>
+        <activity android:name=".TaskARCamera" />
+        <activity android:name=".TaskARIntroduction" />
+        <activity android:name=".TaskQuestionActivity"
+        <activity android:name=".TaskQuestionIntroduction"
+        <activity android:name=".TaskListActivity"
         <activity android:name=".Task4Completed"></activity>
         <activity android:name=".Task4Camera" />
         <activity android:name=".Task4Main" />
@@ -27,7 +33,7 @@
         <activity android:name=".QuizPageOneActivity" />
         <activity android:name=".StartQuizActivity" />
         <activity android:name=".LeaderboardActivity" />
-        <activity android:name=".TeamLobbyActivity"></activity>
+        <activity android:name=".TeamLobbyActivity" />
         <activity android:name=".TeamNameInputActivity" />
         <activity android:name=".TeamJoinActivity" />
         <activity android:name=".TeamRoleSelectionActivity" />
