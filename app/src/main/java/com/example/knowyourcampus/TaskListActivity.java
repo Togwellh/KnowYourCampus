@@ -60,7 +60,13 @@ public class TaskListActivity extends AppCompatActivity {
 
     private void checkForTaskCompletion() {
         Intent i = getIntent();
-        if (i.hasExtra("EXTRA_QUESTION_TASK_COMPLETED")) tasks.get(0).setCompleted(i.getBooleanExtra("EXTRA_QUESTION_TASK_COMPLETED", false));
+        if (i.hasExtra("EXTRA_QUESTION_TASK_COMPLETED")) {
+            tasks.get(0).setCompleted(true);
+        }
+        if (i.hasExtra("EXTRA_AR_TASK_COMPLETED")) {
+            tasks.get(0).setCompleted(true);
+            tasks.get(1).setCompleted(true);
+        }
     }
 
     public void onAbandonClicked(View view) {
