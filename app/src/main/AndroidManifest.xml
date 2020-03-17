@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TaskListActivity" android:exported="true"></activity>
         <activity android:name=".QuizPageTwoActivity" />
         <activity android:name=".QuizPageThreeActivity" />
         <activity android:name=".QuizPageFourActivity" />
@@ -16,7 +17,7 @@
         <activity android:name=".QuizPageOneActivity" />
         <activity android:name=".StartQuizActivity" />
         <activity android:name=".LeaderboardActivity" />
-        <activity android:name=".TeamLobbyActivity"></activity>
+        <activity android:name=".TeamLobbyActivity" />
         <activity android:name=".TeamNameInputActivity" />
         <activity android:name=".TeamJoinActivity" />
         <activity android:name=".TeamRoleSelectionActivity" />
