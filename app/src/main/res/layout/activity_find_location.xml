@@ -130,19 +130,19 @@
                 android:text="pepisoto het amin ibidlung"
                 android:visibility="invisible" />
 
-            <ImageView
-                android:id="@+id/imageHint"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/libhint" />
-
             <TextView
                 android:id="@+id/descHint"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:text="Lots of books"
                 android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/imageHint"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/libhint" />
 
         </LinearLayout>
     </ScrollView>

@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -51,6 +52,17 @@ public class FindLocation extends AppCompatActivity {
         int r;
 
         createNotificationChannel();
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(c, "1")
+                .setSmallIcon(R.drawable.libhint)
+                .setContentTitle("WARNING")
+                .setContentText("Approaching Road, Please Look Both Ways")
+                .setPriority(NotificationCompat.PRIORITY_MAX);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(c);
+
+// notificationId is a unique int for each notification that you must define
+        notificationManager.notify(1, builder.build());
 
         LinearLayout myLinearLayout = (LinearLayout) findViewById(R.id.linLay);
         int childcount = myLinearLayout.getChildCount();
@@ -104,18 +116,8 @@ public class FindLocation extends AppCompatActivity {
         reveal.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(c, "1")
-                        .setSmallIcon(R.drawable.libhint)
-                        .setContentTitle("WARNING")
-                        .setContentText("Approaching Road, Please Look Both Ways")
-                        .setPriority(NotificationCompat.PRIORITY_MAX);
-
-                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(c);
-
-// notificationId is a unique int for each notification that you must define
-                notificationManager.notify(1, builder.build());
-
-
+                Intent intent = new Intent(FindLocation.this, TaskListActivity.class);
+                startActivity(intent);
             }
         });
 
