@@ -15,14 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".TaskARResult"></activity>
-        <activity android:name=".TaskARCamera" />
+        <activity android:name=".TaskARCamera"/>
         <activity android:name=".TaskARIntroduction" />
-        <activity android:name=".TaskQuestionActivity"
-        <activity android:name=".TaskQuestionIntroduction"
-        <activity android:name=".TaskListActivity"
-        <activity android:name=".Task4Completed"></activity>
+        <activity android:name=".TaskQuestionActivity"/>
+        <activity android:name=".TaskQuestionIntroduction"/>
+        <activity android:name=".TaskListActivity" android:exported="true"/>
+        <activity android:name=".Task4Completed"/>
         <activity android:name=".Task4Camera" />
-        <activity android:name=".Task4Main" />
+        <activity android:name=".Task4Main" />;
         <activity android:name=".Task3Completed" />
         <activity android:name=".Task3Camera" />
         <activity android:name=".Task3Main" />
