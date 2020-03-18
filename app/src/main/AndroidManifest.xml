@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.knowyourcampus">
 
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +16,32 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".FindLocation"></activity>
         <activity android:name=".HowToPlay" />
+        <activity android:name=".TaskARResult"></activity>
+        <activity android:name=".TaskARCamera"/>
+        <activity android:name=".TaskARIntroduction" />
+        <activity android:name=".TaskQuestionActivity"/>
+        <activity android:name=".TaskQuestionIntroduction"/>
+        <activity android:name=".TaskListActivity" android:exported="true"/>
+        <activity android:name=".Task4Completed"/>
+        <activity android:name=".Task4Camera" />
+        <activity android:name=".Task4Main" />;
+        <activity android:name=".Task3Completed" />
+        <activity android:name=".Task3Camera" />
+        <activity android:name=".Task3Main" />
+        <activity android:name=".QuizPageTwoActivity" />
+        <activity android:name=".QuizPageThreeActivity" />
+        <activity android:name=".QuizPageFourActivity" />
+        <activity android:name=".QuizFinalscoreActivity" />
+        <activity android:name=".QuizPageOneActivity" />
+        <activity android:name=".StartQuizActivity" />
+        <activity android:name=".LeaderboardActivity" />
+        <activity android:name=".TeamLobbyActivity" />
+        <activity android:name=".TeamNameInputActivity" />
+        <activity android:name=".TeamJoinActivity" />
+        <activity android:name=".TeamRoleSelectionActivity" />
+        <activity android:name=".PlayerSelectionActivity" />
+        <activity android:name=".TourSelectionActivity" />
+        <activity android:name=".SoloNameInputActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
