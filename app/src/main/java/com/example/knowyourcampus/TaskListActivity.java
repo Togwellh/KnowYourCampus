@@ -67,6 +67,17 @@ public class TaskListActivity extends AppCompatActivity {
             tasks.get(0).setCompleted(true);
             tasks.get(1).setCompleted(true);
         }
+        if (i.hasExtra("EXTRA_REPRODUCTION_TASK_COMPLETED")) {
+            tasks.get(0).setCompleted(true);
+            tasks.get(1).setCompleted(true);
+            tasks.get(2).setCompleted(true);
+        }
+        if (i.hasExtra("EXTRA_SELFIE_TASK_COMPLETED")) {
+            tasks.get(0).setCompleted(true);
+            tasks.get(1).setCompleted(true);
+            tasks.get(2).setCompleted(true);
+            tasks.get(3).setCompleted(true);
+        }
     }
 
     public void onAbandonClicked(View view) {
@@ -90,5 +101,10 @@ public class TaskListActivity extends AppCompatActivity {
             }
         });
         builder.show();
+    }
+
+    public void onTakeQuizClicked(View view) {
+        Intent intent = new Intent(this, StartQuizActivity.class);
+        startActivity(intent);
     }
 }

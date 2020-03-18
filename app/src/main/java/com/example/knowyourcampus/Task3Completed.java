@@ -13,20 +13,12 @@ public class Task3Completed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task3_completed);
+    }
 
-        Button completedButton = findViewById(R.id.continueButton);
-
-        completedButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-
-                Intent intent = new Intent(Task3Completed.this, Task4Main.class);
-                startActivity(intent);
-
-            }
-        });
-
+    public void onContinueClick(View v) {
+        Intent intent = new Intent(this, TaskListActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("EXTRA_REPRODUCTION_TASK_COMPLETED", true);
+        startActivity(intent);
     }
 }

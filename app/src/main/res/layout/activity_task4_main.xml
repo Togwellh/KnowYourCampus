@@ -72,11 +72,12 @@ Try to capture as much outline of the building as possible."
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="5dp"
-                android:text="Give Up"
                 android:layout_marginRight="50dp"
+                android:onClick="onGiveUpClick"
+                android:text="Give Up"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/Capture"/>
+                app:layout_constraintRight_toLeftOf="@+id/Capture"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <Button
                 android:id="@+id/Capture"

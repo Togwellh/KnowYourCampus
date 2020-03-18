@@ -13,19 +13,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-
-    }
-
-    public void startTour(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void viewLeaderboard(View view) {
-        //FIXME: should point to 'Leaderboard' screen, not 'Home' screen
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 
     public void startTour(View view) {

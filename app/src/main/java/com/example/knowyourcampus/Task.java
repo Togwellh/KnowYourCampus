@@ -23,18 +23,11 @@ enum TaskType {
 
 
 public class Task implements Serializable {
-    public static Map<TaskType, Class> typeToString = new HashMap<TaskType, Class>() {{
-        put(TaskType.QUESTION, TaskQuestionIntroduction.class);
-        put(TaskType.AR, TaskARIntroduction.class);
-        put(TaskType.PICTURE, TaskQuestionIntroduction.class);
-        put(TaskType.SELFIE, TaskQuestionIntroduction.class);
-    }};
-
     private static Map<TaskType, Class> taskTypeToActivity = new HashMap<TaskType, Class>() {{
         put(TaskType.QUESTION, TaskQuestionIntroduction.class);
         put(TaskType.AR, TaskARIntroduction.class);
-        put(TaskType.PICTURE, TaskQuestionIntroduction.class);
-        put(TaskType.SELFIE, TaskQuestionIntroduction.class);
+        put(TaskType.PICTURE, Task3Main.class);
+        put(TaskType.SELFIE, Task4Main.class);
     }};
 
 
