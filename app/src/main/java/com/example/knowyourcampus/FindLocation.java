@@ -1,8 +1,14 @@
 package com.example.knowyourcampus;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,8 +27,12 @@ public class FindLocation extends AppCompatActivity {
     TextView desc = null;
     ImageView image = null;
     Button reveal = null;
+    Button hint = null;
+    Button qr = null;
 
-            LinkedList<Integer> toRev = new LinkedList<Integer>();
+    LinkedList<Integer> toRev = new LinkedList<Integer>();
+
+    public static Context c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +43,14 @@ public class FindLocation extends AppCompatActivity {
         desc = (TextView) findViewById(R.id.descHint);
         image = (ImageView) findViewById(R.id.imageHint);
         reveal = (Button) findViewById(R.id.revealButton);
+        qr = (Button) findViewById(R.id.qrButton);
+        hint = (Button) findViewById(R.id.hintButton);
 
         Random rand  = new Random();
-
+        c = this;
         int r;
+
+        createNotificationChannel();
 
         LinearLayout myLinearLayout = (LinearLayout) findViewById(R.id.linLay);
         int childcount = myLinearLayout.getChildCount();
@@ -47,7 +61,6 @@ public class FindLocation extends AppCompatActivity {
         }
         myLinearLayout.removeAllViews();
 
-
         do{
             r = rand.nextInt(3);
             if (toRev.contains(r)){
@@ -57,7 +70,7 @@ public class FindLocation extends AppCompatActivity {
             myLinearLayout.addView(children[r]);
         }while(toRev.size() < 3);
 
-        reveal.setOnClickListener(new View.OnClickListener() {
+        hint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (toRev.peek() == 0){
@@ -71,10 +84,45 @@ public class FindLocation extends AppCompatActivity {
                 }
                 toRev.pop();
                 if (toRev.size() == 0){
-                    reveal.setVisibility(View.INVISIBLE);
+                    hint.setVisibility(View.INVISIBLE);
                 }
             }
         });
 
+        reveal.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(c, "1")
+                        .setSmallIcon(R.drawable.libhint)
+                        .setContentTitle("WARNING")
+                        .setContentText("Approaching Road, Please Look Both Ways")
+                        .setPriority(NotificationCompat.PRIORITY_MAX);
+
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(c);
+
+// notificationId is a unique int for each notification that you must define
+                notificationManager.notify(1, builder.build());
+
+
+            }
+        });
+
     }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "One";
+            String description = "Description";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("1", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
 }
