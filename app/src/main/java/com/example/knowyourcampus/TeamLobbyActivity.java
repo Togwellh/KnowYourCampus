@@ -14,7 +14,7 @@ public class TeamLobbyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solo_name_input);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -32,8 +32,7 @@ public class TeamLobbyActivity extends AppCompatActivity {
     }
 
     public void clickedReady(View view) {
-        //FIXME: should link to 'How to play' screen, not 'Home' screen
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HowToPlay.class);
         startActivity(intent);
     }
 }

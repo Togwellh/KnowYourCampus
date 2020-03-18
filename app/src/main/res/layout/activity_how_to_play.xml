@@ -65,7 +65,7 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="114dp"
         android:layout_marginRight="114dp"
-        android:text="Its a tour, not too difficult u idiot"
+        android:text="To be added"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
