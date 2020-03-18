@@ -89,6 +89,18 @@ public class FindLocation extends AppCompatActivity {
             }
         });
 
+        qr.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent intent = new Intent(FindLocation.this, QRScanning.class);
+                startActivity(intent);
+
+            }
+        });
+
         reveal.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
