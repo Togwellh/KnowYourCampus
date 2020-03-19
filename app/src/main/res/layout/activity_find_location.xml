@@ -102,6 +102,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="20dp"
+        android:textStyle="bold"
+        android:textSize="17dp"
         android:text="Try and find the building! Requesting a hint will cost you 10 points."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
