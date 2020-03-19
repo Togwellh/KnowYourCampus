@@ -149,4 +149,16 @@
         </LinearLayout>
     </ScrollView>
 
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="300dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="5dp"
+        android:text="Students spend a lot of time in this tall grey building"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
