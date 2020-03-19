@@ -43,6 +43,9 @@ public class TeamJoinActivity extends AppCompatActivity {
         }
         if (code.length() != 6) {
             input.setError("Code must be 6 digits.");
+        }
+        else if (!code.equals("430219")) {
+            input.setError("Team doesn't exist");
         } else {
             startActivity(intent);
         }
